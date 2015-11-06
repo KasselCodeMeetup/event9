@@ -1,0 +1,35 @@
+# Documentation: https://github.com/roots/trellis#wordpress-sites
+wordpress_sites:
+  kcm.dev:
+    site_hosts:
+      - staging.singemarie.com
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:drala/trellis-kassel_code_meetup.git
+    branch: staging
+    # subtree_path: site # relative path to your Bedrock/WP directory in your repo (above) if it is not the root (like the roots-example-project structure)
+    multisite:
+      enabled: false
+      subdomains: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+      duration: 30s
+    system_cron: true
+    env:
+      wp_home: http://staging.singemarie.com
+      wp_siteurl: http://staging.singemarie.com/wp
+      wp_env: staging
+      db_name: example_staging
+      db_user: example_dbuser
+      db_password: example_dbpassword
+      # Generate your keys here: https://api.wordpress.org/secret-key/1.1/salt/
+      # These CANNOT contain the characters "{%" in succession
+      auth_key: "$k4Ke)jdN#xIqIo8~SffDH]O%~@e+P<&BCi/_|i6tEAmG+m1b0*bLW@G|BKL^b0V"
+      secure_auth_key: "f10amTR4Mh?)5Pg!TD*v66}cPp7x#5`3:vz)g2sFC8wB>2X3MZ!3W$Cr9vF11TK{"
+      logged_in_key: "lN5R7y2{-x8Dr_e!aVK-}+C`6J,ek0V-&D5+FVmlJ^uALE6[L/NXt!8Y~^cyu&EM"
+      nonce_key: "MP/*0$/7Vd8)zc+2,PO5,L,hX`8nLF7xCj{?}fNR8jO_+AGpk$Ff{xr?o%.2pqCO"
+      auth_salt: "Ujf+%P}*[hE|#LEBI 6=@ujzoT>?wDKK;m5WkNFne|Qe+/^w`8PE(j)^bg+LYG`|"
+      secure_auth_salt: "s<L}^7s*!*4+oL@G|,`4.WA&o)nXG|TX*8wJAyv+Wn(r+co>x)`lT=KeN;hh6<,W"
+      logged_in_salt: "#B*-$BQV.HS(|/(+K8gF$zL%.-Ys|$%Dh@i .ZbhABJ&A#*.]qv9~B-jh|sgAHc,"
+      nonce_salt: "%dG4^7dpbfX%GkyIKJ#Fi</{RAdHUE6k]c732ym*Da]e`=UMo oj>W.c-|#,,4B+"
