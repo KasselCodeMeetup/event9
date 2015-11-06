@@ -1,0 +1,35 @@
+# Documentation: https://github.com/roots/trellis#wordpress-sites
+wordpress_sites:
+  kcm.dev: # name of the project. should be the same in all enviroments
+    site_hosts:
+      - example.com
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:drala/trellis-kassel_code_meetup.git
+    branch: master
+    # subtree_path: site # relative path to your Bedrock/WP directory in your repo (above) if it is not the root (like the roots-example-project structure)
+    multisite:
+      enabled: false
+      subdomains: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+      duration: 30s
+    system_cron: true
+    env:
+      wp_home: http://example.com
+      wp_siteurl: http://example.com/wp
+      wp_env: production
+      db_name: example_prod
+      db_user: example_dbuser
+      db_password: example_dbpassword
+      # Generate your keys here: https://api.wordpress.org/secret-key/1.1/salt/
+      # These CANNOT contain the characters "{%" in succession
+      auth_key: 'UrqxW5<6g>&>4}xF(|q`$s:qg[7u,qqC9*PIHGv0Hw)ma>X=TbO]NNw)]03O7L|1'
+      secure_auth_key: 'a{V-;Q17<OOne4|[L_F{-g$WW@71Q6Q| -?zL t$DuHKY&r$QxANpA?F[Wt;>nv|'
+      logged_in_key: '472ZDGMu6,rs[rq|Wgu4#E4|5^@6Jz#V,G-6P_K!WBr;-M])t[G%7OEok1;==P]X'
+      nonce_key: 'D?)0l2,W6L_+@@-f I`vL5s(A-Z~:U$@u|5#Ax&]n#x({-dkYz#2YcTy_.<.|3hR'
+      auth_salt: 'DytbJd4Q[>VJwm2%dv:!H`eTGw>YZ-K/q~wef3gh^BQ]<bqbf/N95Oi:#aVgVc+d'
+      secure_auth_salt: '>|yW>FT(uAGj>nCDZ:qb;Ol64to+kj|m6#BI0X-Ud!;XItk;m|&9+Tdd>!OE-qIZ'
+      logged_in_salt: 'f+TEIw R:i-ks_wJ?Z^*p)e^%=1P0)ZAN!g?qt{&?9E)t.{L)>|H,u.[m7=)/6U3'
+      nonce_salt: '|CR=W-%3K_?]o`>3S?K+&Y*T2)$JYrW%=o}zQoS+k8Q`|,?+OVh[PY?8N|XHS6@r'
